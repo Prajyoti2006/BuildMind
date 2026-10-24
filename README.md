@@ -48,43 +48,50 @@ BuildMind helps developers examine build logs and understand errors without manu
 
 ### 4.1 Dashboard
 
-![BuildMind Dashboard](screenshots/01-dashboard.png)
+<img width="1882" height="787" alt="Dashboard" src="https://github.com/user-attachments/assets/cc00b071-a750-48f4-bcb4-45adc1dc74b3" />
+
 
 **Figure 1:** BuildMind main dashboard.
 
 ### 4.2 Build Analysis
 
-![Build Analysis](screenshots/02-build-analysis.png)
+<img width="1873" height="602" alt="Build Analysis" src="https://github.com/user-attachments/assets/c0c0d1e5-f902-4e61-b059-e13c0824bab8" />
+
 
 **Figure 2:** Build failure analysis interface.
 
 ### 4.3 Knowledge Base
 
-![Knowledge Base](screenshots/03-knowledge-base.png)
+<img width="1857" height="816" alt="Knowledge Base" src="https://github.com/user-attachments/assets/2e82e523-50d6-4661-9fd1-b5da8f638b1f" />
+
 
 **Figure 3:** BuildMind knowledge base.
 
 ### 4.4 DevOps Monitor
 
-![DevOps Monitor](screenshots/04-devops-monitor.png)
+<img width="1885" height="401" alt="Devops Monitor" src="https://github.com/user-attachments/assets/b13c29f8-ebba-43b8-8cc6-80f0adfdf03b" />
+
 
 **Figure 4:** DevOps monitoring interface.
 
 ### 4.5 Project History
 
-![Project History](screenshots/05-project-history.png)
+<img width="1861" height="646" alt="History png" src="https://github.com/user-attachments/assets/cfb1a1f1-b543-4706-ae18-010b9344a911" />
+
 
 **Figure 5:** Project history interface.
 
 ### 4.6 Git Commands
 
-![Git Commands](screenshots/06-git-commands.png)
+<img width="870" height="562" alt="Git Commands" src="https://github.com/user-attachments/assets/40a3ed2f-51f7-444f-b91f-8f5c1833db10" />
+
 
 **Figure 6:** Git commands and version-control evidence.
 
 ### 4.7 Jenkins Integration
 
-![Jenkins Integration](screenshots/07-jenkins-integration.png)
+<img width="1015" height="768" alt="Jenkins Integration" src="https://github.com/user-attachments/assets/a992c16b-d8bc-4749-98bf-73404270abd5" />
+
 
 **Figure 7:** Jenkins integration evidence.
 **Figure 1:** BuildMind application interface.
