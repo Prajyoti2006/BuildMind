@@ -42,19 +42,52 @@ BuildMind helps developers examine build logs and understand errors without manu
 | GitHub     | Remote repository hosting                         |
 | Jenkins    | Continuous Integration pipeline                   |
 
+
+
 ## 4. Application Screenshots
 
-### 4.1 Application Interface
+### 4.1 Dashboard
 
+![BuildMind Dashboard](screenshots/01-dashboard.png)
 
+**Figure 1:** BuildMind main dashboard.
 
+### 4.2 Build Analysis
+
+![Build Analysis](screenshots/02-build-analysis.png)
+
+**Figure 2:** Build failure analysis interface.
+
+### 4.3 Knowledge Base
+
+![Knowledge Base](screenshots/03-knowledge-base.png)
+
+**Figure 3:** BuildMind knowledge base.
+
+### 4.4 DevOps Monitor
+
+![DevOps Monitor](screenshots/04-devops-monitor.png)
+
+**Figure 4:** DevOps monitoring interface.
+
+### 4.5 Project History
+
+![Project History](screenshots/05-project-history.png)
+
+**Figure 5:** Project history interface.
+
+### 4.6 Git Commands
+
+![Git Commands](screenshots/06-git-commands.png)
+
+**Figure 6:** Git commands and version-control evidence.
+
+### 4.7 Jenkins Integration
+
+![Jenkins Integration](screenshots/07-jenkins-integration.png)
+
+**Figure 7:** Jenkins integration evidence.
 **Figure 1:** BuildMind application interface.
-
-### 4.2 Build Log Analysis
-
-
-
-**Figure 2:** Build log analysis interface.
 
 ## 5. Website Improvements
 
