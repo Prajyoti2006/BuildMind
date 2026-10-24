@@ -146,13 +146,12 @@ git push origin main
 
 
 
-**Figure 3:** Git commit history.
+
 
 ### GitHub Repository Evidence
 
 
 
-**Figure 4:** BuildMind repository on GitHub.
 
 ## 7. Jenkins Continuous Integration
 
@@ -169,10 +168,6 @@ Jenkins is used to demonstrate the project's Continuous Integration workflow.
 5. Inspect the build status and console output.
 
 ### Jenkins Pipeline Evidence
-
-
-
-**Figure 5:** Jenkins pipeline page showing the build status.
 
 The Jenkins job page shows Build #4 as successful. The pipeline stage details and console output should also be reviewed when documenting the completed CI workflow.
 
