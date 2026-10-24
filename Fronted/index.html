@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildMind | AI Build Failure Analyzer</title>\n    <meta name="description" content="BuildMind helps developers inspect build logs and organize troubleshooting insights.">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <div>
+                    <h2>BuildMind</h2>
+                    <p>DEVOPS INTELLIGENCE</p>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a class="nav-item active" href="#dashboard">▦ &nbsp; Dashboard</a>
+                <a class="nav-item" href="#analyzer">⌘ &nbsp; Build Analysis</a>
+                <a class="nav-item" href="#history">◷ &nbsp; History</a>
+                <a class="nav-item" href="#devops">⚙ &nbsp; DevOps Monitor</a>
+                <a class="nav-item" href="#knowledge">▤ &nbsp; Knowledge Base</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span class="status-dot"></span>
+                <span>BuildMind Backend</span>
+                <span class="online-label">API</span>
+            </div>
+        </aside>
+
+        <main class="main-content" id="dashboard">
+            <header class="topbar">
+                <div>
+                    <p class="breadcrumb">WORKSPACE / DASHBOARD</p>
+                    <h1>Build Failure Analyzer</h1>
+                    <p class="subtitle">Analyze build logs to identify likely causes and troubleshooting steps.</p>
+                </div>
+                <div class="top-badge">● DEVOPS TOOL</div>
+            </header>
+
+            <section class="input-section" id="analyzer">
+                <div class="section-heading">
+                    <div>
+                        <h2>Build Log Input</h2>
+                        <p>Paste your Jenkins error logs to identify likely causes.</p>
+                    </div>
+                    <span class="section-label">ERROR LOG INPUT</span>
+                </div>
+
+                <div class="editor">
+                    <div class="editor-header">
+                        <div class="window-controls">
+                            <span class="red"></span>
+                            <span class="yellow"></span>
+                            <span class="green"></span>
+                        </div>
+                        <span>jenkins-build.log</span>
+                    </div>
+
+                    <textarea id="errorLog"
+                        placeholder="Paste your Jenkins console output here...&#10;&#10;Example:&#10;ERROR: Could not find or load main class Main&#10;Build step failed."
+                        spellcheck="false"></textarea>
+
+                    <div class="editor-footer">
+                        <span>⌁ Paste logs from your Jenkins console output</span>
+                        <button id="clearBtn" class="clear-btn" type="button">Clear logs</button>
+                    </div>
+                </div>
+
+                <div class="action-row">
+                    <div class="mode-label">✦ &nbsp; Log analysis · AI or Demo mode</div>
+                    <button id="analyzeBtn" class="analyze-btn" type="button">
+                        ✦ &nbsp; Analyze Logs &nbsp; →
+                    </button>
+                </div>
+            </section>
+
+            <section id="result" class="result-section" hidden>
+                <div class="report-header">
+                    <div class="report-icon">✦</div>
+                    <div>
+                        <h2>Analysis Report</h2>
+                        <p id="modeText">Build log analysis results</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>POSSIBLE CAUSE</h3>
+                    <p id="causeText"></p>
+                </div>
+
+                <div class="result-card">
+                    <h3>SUGGESTED NEXT STEP</h3>
+                    <p id="fixText"></p>
+                </div>
+
+                <div class="result-card evidence-card">
+                    <h3>ERROR EVIDENCE</h3>
+                    <pre id="evidenceText"></pre>
+                </div>
+
+                <p class="report-note">
+                    This is a preliminary suggestion, not a verified fix.
+                    Check the full logs before changing your project.
+                </p>
+            </section>
+
+            <section class="stats-section" aria-label="Dashboard statistics">
+                <div class="stat-card">
+                    <span class="stat-label">PROJECT STATUS</span>
+                    <h2>Ready</h2>
+                    <p>Paste a build log to begin</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">ANALYSES THIS SESSION</span>
+                    <h2 id="analysisCount">0</h2>
+                    <p>Log analyses completed</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">ANALYSIS ENGINE</span>
+                    <h2>BuildMind</h2>
+                    <p>Rule-based analysis with optional AI</p>
+                </div>
+            </section>
+
+            <section class="extra-section" id="history">
+                <div class="extra-heading">
+                    <div><span class="eyebrow">LOCAL WORKSPACE</span><h2>Build analysis history</h2>
+                    <p>Your recent analyses are saved in this browser for this demo.</p></div>
+                    <button id="clearHistoryBtn" class="secondary-btn" type="button">Clear history</button>
+                </div>
+                <div class="history-summary">
+                    <div class="mini-stat"><span>Saved reports</span><strong id="historyCount">0</strong></div>
+                    <div class="mini-stat"><span>Successful / other</span><strong id="successCount">0</strong></div>
+                    <div class="mini-stat"><span>Failure / other</span><strong id="failureCount">0</strong></div>
+                </div>
+                <div class="history-table-wrap">
+                    <table class="history-table">
+                        <thead><tr><th>Date</th><th>Possible cause</th><th>Suggested next step</th></tr></thead>
+                        <tbody id="historyRows"><tr><td colspan="3">No reports yet. Analyze a log first.</td></tr></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="extra-section" id="devops">
+                <div class="extra-heading"><div><span class="eyebrow">PIPELINE OVERVIEW</span><h2>DevOps Monitor</h2>
+                <p>A project overview for documenting your CI/CD workflow.</p></div><span class="demo-tag">DEMO VIEW</span></div>
+                <div class="pipeline-grid">
+                    <div class="pipeline-card"><span class="pipeline-number">01</span><h3>Source</h3><p>GitHub repository</p><span class="stage-label">Version control</span></div>
+                    <div class="pipeline-card"><span class="pipeline-number">02</span><h3>Build</h3><p>Jenkins pipeline</p><span class="stage-label">CI automation</span></div>
+                    <div class="pipeline-card"><span class="pipeline-number">03</span><h3>Analyze</h3><p>BuildMind log analysis</p><span class="stage-label">Failure insights</span></div>
+                    <div class="pipeline-card"><span class="pipeline-number">04</span><h3>Improve</h3><p>Review suggested fix</p><span class="stage-label">Troubleshooting</span></div>
+                </div>
+                <p class="disclaimer">Note: These are illustrative pipeline stages, not live Jenkins status.</p>
+            </section>
+
+            <section class="extra-section" id="knowledge">
+                <div class="extra-heading"><div><span class="eyebrow">QUICK REFERENCE</span><h2>Knowledge Base</h2>
+                <p>Common build issues and a first troubleshooting step.</p></div></div>
+                <input id="knowledgeSearch" class="search-box" type="search" placeholder="Search errors, tools, or solutions...">
+                <div class="knowledge-grid" id="knowledgeGrid">
+                    <article class="knowledge-card"><span>JAVA</span><h3>Class not found</h3><p>Check the class name, package, classpath, and whether compilation completed successfully.</p></article>
+                    <article class="knowledge-card"><span>DEPENDENCIES</span><h3>Package not found</h3><p>Verify the dependency name and version, repository access, and project configuration.</p></article>
+                    <article class="knowledge-card"><span>DOCKER</span><h3>Image build failed</h3><p>Review the Dockerfile instruction and the first error in the build output.</p></article>
+                    <article class="knowledge-card"><span>JENKINS</span><h3>Pipeline failed</h3><p>Open the failed stage's console output and identify the earliest meaningful error.</p></article>
+                    <article class="knowledge-card"><span>GIT</span><h3>Checkout failed</h3><p>Check repository URL, branch name, credentials, and network access.</p></article>
+                    <article class="knowledge-card"><span>PYTHON</span><h3>Module not found</h3><p>Confirm the active environment and install the required package in that environment.</p></article>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>BuildMind · AI-Powered Build Failure Analyzer</span>
+                <span>DevOps Mini Project</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
